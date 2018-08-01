@@ -1,6 +1,7 @@
 import React from 'react';
 import router from 'umi/router';
 import styles from './index.less';
+import NotFound from '../pages/404';
 
 export default function Layout(props) {
     const state = {
@@ -14,11 +15,22 @@ export default function Layout(props) {
                 link: '/picture'
             },
             {
-                name: 'blog article',
+                name: 'blog',
                 link: '/'
             },
         ],
     };
+
+    function matchUrl(path, route) {
+        let isMatch = true;
+        if (route.path === path) {
+            isMatch = false;
+        } else if (route.routes) {
+            isMatch = route.routes.every((subRoute) => matchUrl(path, subRoute));
+        }
+        return isMatch;
+    }
+    const isNotFound = matchUrl(props.location.pathname, props.route);
     return (
         <div className={`${styles.container} ${styles.fixNavContainer}`}>
             <div className={styles.nav}>
@@ -43,7 +55,7 @@ export default function Layout(props) {
             </div>
             <div className={styles.router}>
                 {
-                    props.children
+                    isNotFound ? <NotFound/> : props.children
                 }
             </div>
         </div>

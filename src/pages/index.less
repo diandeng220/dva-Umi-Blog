@@ -1,23 +1,6 @@
-.welcome {
-  height: 328px;
-  background: url(../assets/yay.jpg) no-repeat center 0;
-  background-size: 388px 328px;
-}
 
-.list {
-  font-size: 1.2em;
-  margin-top: 1.8em;
-  list-style: none;
-  line-height: 1.5em;
-}
-
-.list code {
-  background: #f7f7f7;
-}
-
-
-.articleList{
-    .article{
+.blogList{
+    .blog{
         border:1px solid #000000;
         margin-bottom: 30px;
         padding: 15px;
@@ -60,6 +43,24 @@
                 display: block;
                 clear: both;
             }
+        }
+    }
+}
+
+.notFound{
+    text-align: center;
+    .errorCode{
+        font-size: 5em;
+    }
+    .return{
+        text-align: right;
+        margin-top: 30px;
+    }
+    .returnText{
+        &:hover{
+            text-decoration: underline;
+            cursor: pointer;
+            font-weight: bold;
         }
     }
 }

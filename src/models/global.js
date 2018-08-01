@@ -4,7 +4,7 @@ export default {
     namespace: 'global',
 
     state: {
-        articleList: [
+        blogList: [
             {
                 title: 'express + mongoose',
                 description: 'askdjfkalsdjflkajsdfjlks',
@@ -80,7 +80,7 @@ export default {
     },
 
     effects: {
-        *fetch({ payload }, { call, put }) {
+        * fetch({ payload }, { call, put }) {
             yield put({ type: 'save' });
         },
     },
