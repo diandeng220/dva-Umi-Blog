@@ -1,0 +1,65 @@
+.welcome {
+  height: 328px;
+  background: url(../assets/yay.jpg) no-repeat center 0;
+  background-size: 388px 328px;
+}
+
+.list {
+  font-size: 1.2em;
+  margin-top: 1.8em;
+  list-style: none;
+  line-height: 1.5em;
+}
+
+.list code {
+  background: #f7f7f7;
+}
+
+
+.articleList{
+    .article{
+        border:1px solid #000000;
+        margin-bottom: 30px;
+        padding: 15px;
+        .title{
+            font-size: 2.5rem;
+            font-weight: normal;
+            letter-spacing: -1px;
+            .titleLetter{
+                cursor: pointer;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+        .subscription{
+            font-size: 14px;
+            color: rgba(0,0,0,.5);
+        }
+        .info{
+            margin-top: 10px;
+            .infoItem{
+                float: left;
+                width: auto;
+                margin-right: 20px;
+            }
+            .infoTime{
+
+            }
+            .infoLike{
+
+            }
+            .infoCommit{
+
+            }
+            .infoVisited{
+
+            }
+            &::after{
+                content: '';
+                display: block;
+                clear: both;
+            }
+        }
+    }
+}
